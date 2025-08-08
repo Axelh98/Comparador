@@ -23,8 +23,6 @@ Python 3.x
 
 pandas — for data handling and comparison.
 
-openpyxl and xlsxwriter — for writing and formatting Excel files.
-
 tkinter — for the GUI.
 
 matplotlib — (optional) for generating charts.
