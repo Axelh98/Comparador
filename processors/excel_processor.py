@@ -6,7 +6,6 @@ import os
 import pandas as pd
 from utils.data_utils import DataUtils
 from utils.file_utils import FileUtils
-from excel_charts import generar_graficos_historial
 
 # Constantes para tipos de cambio
 MODIFICACION = "Modificación"
