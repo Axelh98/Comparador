@@ -27,7 +27,7 @@ class ComparadorExcelApp:
         self.archivo_excel = tk.StringVar()
         self.directorio_salida = tk.StringVar()
         self.directorio_salida.set(os.getcwd())  # Current directory by default
-        self.titulo_proyecto = tk.StringVar(value="Properties of the Project")
+        self.titulo_proyecto = tk.StringVar(value="Name of the Project")
         self.columna_id = tk.StringVar()
         self.mes_actual = tk.StringVar(value=datetime.datetime.now().strftime("%B"))
         

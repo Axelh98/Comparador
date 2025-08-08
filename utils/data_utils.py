@@ -40,4 +40,31 @@ class DataUtils:
         return columna in df.columns
     
     @staticmethod
-    def obtener_columnas
+    def obtener_columnas_id_candidatas(df):
+        """Busca columnas que podrían ser ID en el DataFrame"""
+        id_columns = []
+        for col in df.columns:
+            if 'id' in col.lower():
+                id_columns.append(col)
+        return id_columns
+    
+    @staticmethod
+    def detectar_tipos_datos(df):
+        """Detecta y devuelve información sobre los tipos de datos del DataFrame"""
+        info = {}
+        for col in df.columns:
+            info[col] = {
+                'tipo': str(df[col].dtype),
+                'valores_nulos': df[col].isnull().sum(),
+                'valores_unicos': df[col].nunique()
+            }
+        return info
+    
+    @staticmethod
+    def limpiar_dataframe(df):
+        """Realiza limpieza básica del DataFrame"""
+        # Eliminar espacios en blanco de las columnas de texto
+        for col in df.select_dtypes(include=['object']).columns:
+            df[col] = df[col].astype(str).str.strip()
+        
+        return df
